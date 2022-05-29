@@ -1,0 +1,260 @@
+
+        body {
+            
+            align-content: center;
+            background-color: whitesmoke;
+            
+            height: fit-content;
+            min-width: 1200px;
+            overflow: scroll;
+
+        }
+
+        nav {
+            position: fixed;
+            top: 0px;
+            left: auto;
+            right: auto;
+            z-index: 10;
+
+            padding-left: 160px;
+            padding-right: 160px;
+
+            display: grid;
+            align-content: center;
+            padding-top: 20px;
+            grid-template-columns: 20% 20% 20% 20% 20%;
+            grid-template-rows: 30px;
+
+            font-family: 'Roboto', sans-serif;
+
+            width: 100vw;
+            height: 35px;
+
+            border-bottom: #99ff99 10px outset;
+            background: linear-gradient(to top, #33cc33 -10%, #99ff99 95%);
+        }
+        nav button{
+            width: 50px;
+            height: 50px;
+            background: transparent;
+            border: none;
+            font-size: 36px;
+            color: white;
+            display: none;
+        }
+        .dropdown {
+            position: fixed;
+            display: none;
+            height: 100vh;
+            width: 220px;
+            background: linear-gradient(to bottom, #33cc33 -10%, #99ff99 95%);
+            grid-template-columns: 90%;
+            padding-left: 30px;
+            grid-template-rows: 40px 40px 40px 40px 40px 40px ;
+            padding-top: 60px;
+            z-index: 9;
+            box-shadow: 0px 0px 20px black;
+            
+        }
+        .dropdown a {
+            text-decoration: none;
+            color: white;
+            font-family: 'Roboto', sans-serif;
+            font-size: 24px;
+        }
+        
+        .background {
+            width: 100vw;
+            height: fit-content;
+
+            
+            
+            display: flex;
+            align-items: center;
+            
+            flex-direction: column;
+            
+            
+        }   
+
+        footer {
+            bottom: 0px;
+            left: auto;
+            right: auto;
+
+            
+            padding-top: 20px;
+            width: 100%;
+            height: 150px;
+
+            position: relative;
+            /*display: grid;
+            grid-template-columns: 20% 20% 20%;
+            grid-template-rows: 30%;
+            gap: 20px;*/
+            display: flex;
+            justify-content: center;
+            gap: 20%;
+            bottom: 0px;
+
+            border-top: #99ff99 10px inset;
+            background: linear-gradient(to bottom, #33cc33 -10%, #99ff99 95%);
+        }
+
+        .info {
+            width: 200px;
+            height: 100%;
+            color: white;
+            font-family: 'Roboto', sans-serif;
+        }
+        .info p{
+            margin-bottom: 10px;
+        }
+        b {
+            font-weight: bold;
+        }
+        .info a{
+            color: white;
+            font-weight: 600;
+        }
+        .block {
+            background-color: white;
+            box-shadow: 0px 0px 20px black;
+            width: 1200px;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 75px;
+        }
+
+        nav p {
+            text-decoration: none;
+            cursor: pointer;
+            font-size: 25px;
+            color: white;
+        }
+        nav p:hover {
+            text-shadow: black 2px 2px 5px;
+        }
+        a {
+            text-decoration: none;
+        }
+        b {
+            font-weight: bold;
+        }
+        h1 {
+            font-size: 24px;
+            font-weight: bold;
+            font-family: 'Roboto', sans-serif;
+            
+        }
+
+
+        @media (max-width: 1200px) and (min-width: 1001px) {
+            .block {
+                width: 100vw;
+                min-width: 0;
+            
+            }
+            body {
+                overflow-x: hidden;
+                overflow-y: scroll;
+                min-width: 0px;
+                min-height: 0px;
+                display: block;
+                width: 100vw;
+                height: 100vh;
+                padding: 0;
+
+            }
+        }
+        @media (max-width: 1000px) and (min-width: 501px) {
+            body {
+                overflow-x: hidden;
+                overflow-y: scroll;
+                min-width: 0px;
+                min-height: 0px;
+                display: block;
+                width: 100vw;
+                height: 100vh;
+                padding: 0;
+            }
+            .block {
+                
+                overflow-x: hidden;
+                overflow-y: scroll;
+                width: 100vw;
+                box-shadow: none;
+                padding-top: 75px;
+            }
+            nav {
+                display: flex;
+                padding: 0px;
+                height: 40px;
+                align-items: center;
+                justify-content: flex-end;
+                gap: 40px;
+            }
+            nav a {
+                display: none;
+            }
+            nav button {
+                display: block;
+            }
+            .dropdown {
+                display: grid;
+                right: -250px;
+            }
+            footer {
+                width: 100vw;
+                padding: 0px;
+                padding-top: 20px;
+                gap: 10px;
+                justify-content: space-evenly;
+            }
+        }
+        @media (max-width: 500px) {
+            body {
+                overflow-x: hidden;
+                overflow-y: scroll;
+                min-width: 0px;
+                min-height: 0px;
+                display: block;
+                width: 100vw;
+                height: 100vh;
+                padding: none;
+            }
+            .block {
+                overflow-x: hidden;
+                overflow-y: scroll;
+                width: 100vw;
+                box-shadow: none;
+            }
+            nav {
+                display: flex;
+                padding: 0px;
+                height: 40px;
+                align-items: center;
+                justify-content: flex-end;
+                gap: 40px;
+            }
+            nav a {
+                display: none;
+            }
+            nav button {
+                display: block;
+            }
+            .dropdown {
+                display: grid;
+                right: -250px;
+            }
+            footer {
+                width: 100vw;
+                padding: 0px;
+                padding-top: 20px;
+                gap: 10px;
+                justify-content: space-evenly;
+            }
+        }

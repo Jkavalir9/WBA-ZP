@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://api-ssps.cajthaml.eu/file/global/css/reset_ld9mrCCm.css"> 
+
+
+    <link rel="stylesheet" href="../Shared/base.css">
+    <link rel="stylesheet" href="../Shared/Mail.css">
+    <link rel="stylesheet" href="mainStyle.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+    <title>SJV Bachova 853</title>
+    <script src="https://kit.fontawesome.com/82b9270136.js" crossorigin="anonymous"></script>
+
+    
+</head>
+
+
+
+<body>
+    <?php
+    if(isset($_POST['submit'])){
+        $MailSubject = $_POST['subject'];
+        $MailContent = $_POST['content'];
+        $host=$_SERVER['SERVER_NAME'];
+        $from="server@$host";
+        $MailContent = wordwrap($MailContent, 100);
+        mail("j.kavalir10@gmail.com", $MailSubject, $MailContent, "From: $from");
+    }
+    ?>
+
+    <div class="darken" id="darken">
+        <div class="mailwindow">
+            <button id="cancelMail" class="cancel" onclick="HideMailWindow()">X</button>
+            <form action="" method="post">
+                <input type="text"  class="TextSub" name="subject" placeholder="Předmět" id="">
+                <input type="text"  class="TextCon" name="content" placeholder="Obsah" id="">
+                <input type="submit" class="ButForm" name="submit" value="Odeslat">
+            </form>
+        </div>
+    </div>
+
+    <nav>
+        <a href="../MainPage/Domů.html"><p>Hlavní Stránka</p></a>
+        <a href="../sidePages/Udalosti.html"><p>Události</p></a>
+        <button class="expand"><i class="fa-solid fa-bars"></i></button>
+    </nav>
+    <div class="dropdown">
+        <a href="../MainPage/Domů.html"><p>Hlavní Stránka</p></a>
+        <a href="../sidePages/Udalosti.html"><p>Události</p></a>
+        <p></p>
+        <a href="../sidePages/O nás.html"><p>O Nás</p></a>
+        <a href="../sidePages/Dokumentace.html"><p>Dokumentace</p></a>
+        <a href="../sidePages/Galerie.html"><p>Galerie</p></a>
+        <a href="../sidePages/Revize.html"><p>Revize domu</p></a>
+    </div>
+
+    <div class="background">   
+        <div class="block">
+            <main>
+                <aside>
+                    <a href="../sidePages/O nás.html"><div class="link"><h1>O Nás</h1></div></a>
+                    <a href="../sidePages/Dokumentace.html"><div class="link"><h1>Dokumentace</h1></div></a>
+                    <a href="../sidePages/Galerie.html"><div class="link"><h1>Galerie</h1></div></a>
+                    <a href="../sidePages/Revize.html"><div class="link"><h1>Revize domu</h1></div></a>
+
+                    
+                </aside>
+                <div class="image" id="image">
+                    
+                    <img class="TransitionFade" src="https://media.discordapp.net/attachments/952513104359608360/952513135116419092/20220223_155948.jpg" alt="">
+                    <img class="TransitionFade" src="https://media.discordapp.net/attachments/952513104359608360/952513153042894898/20220223_161029.jpg?width=677&height=676" alt="">
+                    <img class="TransitionFade" src="https://media.discordapp.net/attachments/952513104359608360/952513172793856090/20220223_161111.jpg?width=729&height=676" alt="">
+                    <button class="leftB" onclick="ArrowImage(-1)">&#9668;</button>
+
+                    <button class="rightB" onclick="ArrowImage(1)">&#9658;</button>
+                </div>
+            </main>
+
+            <hr>
+
+            <h1>Události</h1>
+            <article>
+                <button class="buttonSwap active" onclick="ListSwap(0)"><p><i class="fa-solid fa-bullhorn"></i> aktuality</p></button>
+                <button class="buttonSwap" onclick="ListSwap(1)"><p><i class="fa-solid fa-wrench"></i> plánované opravy</p></button>
+                <button class="buttonSwap" onclick="ListSwap(2)"><p><i class="fa-solid fa-thumbtack"></i> připnuté zprávy</p></button>
+                <div class="side side1">
+                    
+                    <a href="">
+                    <div class="sideContent">
+                        <div class="textContent"><h1>Odstávka vody od 14:00</h1>
+                            <hr>
+                            <p>od 14:00 do 16:00 proběhne odstávka vody z důvodu udržby</p></div>
+                        <div class="dateContent">
+                            <p class="day">16</p>
+                            <p class="month">Duben</p>
+                        </div>
+                    </div>
+                    </a>
+                    <a href="">
+                        <div class="sideContent">
+                            <div class="textContent"><h1>Odstávka vody od 15:00</h1>
+                                <hr>
+                                <p>od 14:00 do 16:00 proběhne odstávka vody z důvodu udržby2</p></div>
+                            <div class="dateContent">
+                                <p class="day">16</p>
+                                <p class="month">Duben</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="">
+                        <div class="sideContent">
+                            <div class="textContent"><h1>Odstávka vody od 16:00</h1>
+                                <hr>
+                                <p>od 14:00 do 16:00 proběhne odstávka vody z důvodu udržby3</p></div>
+                            <div class="dateContent">
+                                <p class="day">16</p>
+                                <p class="month">Duben</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="">
+                        <div class="sideContent">
+                            <div class="textContent"><h1>Odstávka vody od 14:00</h1>
+                                <hr>
+                                <p>od 14:00 do 16:00 proběhne odstávka vody z důvodu udržby</p></div>
+                            <div class="dateContent">
+                                <p class="day">16</p>
+                                <p class="month">Duben</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="side">
+                    <a href="">
+                        <div class="sideContent">
+                            <div class="textContent"><h1>Oprava schodiště</h1>
+                                <hr>
+                                <p>...</p></div>
+                            <div class="dateContent">
+                                <p class="day">12</p>
+                                <p class="month">Duben</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="">
+                        <div class="sideContent">
+                            <div class="textContent"><h1>Odstávka vody od 14:00</h1>
+                                <hr>
+                                <p>od 14:00 do 16:00 proběhne odstávka vody z důvodu udržby</p></div>
+                            <div class="dateContent">
+                                <p class="day">16</p>
+                                <p class="month">Duben</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="">
+                        <div class="sideContent">
+                            <div class="textContent"><h1>Odstávka vody od 14:00</h1>
+                                <hr>
+                                <p>od 14:00 do 16:00 proběhne odstávka vody z důvodu udržby</p></div>
+                            <div class="dateContent">
+                                <p class="day">16</p>
+                                <p class="month">Duben</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="">
+                        <div class="sideContent">
+                            <div class="textContent"><h1>Odstávka vody od 14:00</h1>
+                                <hr>
+                                <p>od 14:00 do 16:00 proběhne odstávka vody z důvodu udržby</p></div>
+                            <div class="dateContent"><p class="day">16</p>
+                            <p class="month">Duben</p></div>
+                        </div>
+                    </a>
+                </div>
+                <div class="side">
+                    <a href="">
+                        <div class="sideContent">
+                            <div class="textContent"><h1>Odstávka vody od 14:00</h1>
+                                <hr>
+                                <p>od 14:00 do 16:00 proběhne odstávka vody z důvodu udržby</p></div>
+                            <div class="dateContent"><p class="day">16</p>
+                            <p class="month">Duben</p></div>
+                        </div>
+                    </a>
+                    <a href="">
+                        <div class="sideContent">
+                            <div class="textContent"><h1>Odstávka vody od 14:00</h1>
+                                <hr>
+                                <p>od 14:00 do 16:00 proběhne odstávka vody z důvodu udržby</p></div>
+                            <div class="dateContent"><p class="day">16</p>
+                            <p class="month">Duben</p></div>
+                        </div>
+                    </a>
+                    <a href="">
+                        <div class="sideContent">
+                            <div class="textContent"><h1>Odstávka vody od 14:00</h1>
+                                <hr>
+                                <p>od 14:00 do 16:00 proběhne odstávka vody z důvodu udržby</p></div>
+                            <div class="dateContent"><p class="day">16</p>
+                            <p class="month">Duben</p></div>
+                        </div>
+                    </a>
+                    <a href="" class="inactEvent">
+                        <div class="sideContent">
+                            <div class="textContent"><h1>Odstávka vody od 14:00</h1>
+                                <hr>
+                                <p>od 14:00 do 16:00 proběhne odstávka vody z důvodu udržby</p></div>
+                            <div class="dateContent"><p class="day">16</p>
+                            <p class="month">Duben</p></div>
+                        </div>
+                    </a>
+
+                </div>
+            </article>
+            <hr class="secondhr">
+
+            <div class="about">
+                <div class="contact">
+                    <h1>Kontakty</h1>
+                    <p>lorem ipsum: +420 154 244 122</p>
+                    <p>lorem ipsum</p>
+                    <p>lorem.ipsum@gmail.com</p>
+                </div>
+
+                <div class="mapouter">
+                    <div class="gmap_canvas">
+                        <iframe width="500" height="350" id="gmap_canvas" src="https://maps.google.com/maps?q=Bachova%201590,%20Praha&t=&z=17&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+                        <a href="https://www.whatismyip-address.com/divi-discount/"></a>
+                        <br>
+                        <a href="https://www.embedgooglemap.net">embedding map</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+          
+
+        <footer>
+            <button id="mail" onclick="ShowMailWindow()">Poslat E-mail</button>
+            <div class="info">
+                <p><b>Otevírací doba:</b> 1. středa v měsíci, 19:00 - 20:00</p>
+                <p>veškeré kontaktní udaje naleznete <a href="../sidePages/O nás.html">zde</a></p>
+            </div>
+            <div class="info">
+                <p><b>Tvorba stránek:</b> Jan Kavalír</p>
+                <p>s problémy se obraťte na adresu: j.kavalir10@gmail.com</p>
+            </div>
+        </footer>
+    </div>
+    
+
+    <script>
+        let Timer = null;
+        let index = 0;
+        ImgSwap(1);       
+        function ImgSwap(SwapBy) {
+            let elements = document.getElementsByTagName("img");
+            for (let i = 0; i < elements.length; i++) {
+                elements[i].style.display = "none";
+            }
+            if (SwapBy == null) {
+                index+=1;
+                if (index >= elements.length) index = 0;
+                elements[index].style.display = "inline";
+                
+                Timer = setTimeout(ImgSwap, 3500);
+                
+            }
+            else if (SwapBy == 1 || SwapBy == -1) {
+                index+=SwapBy;
+                if (index >= elements.length) index = 0;
+                else if (index < 0) index = elements.length-1;
+                elements[index].style.display = "inline";
+                Timer = setTimeout(ImgSwap, 5500);
+            }
+        }
+        function ArrowImage(IndexChange) {
+            clearTimeout(Timer);
+            ImgSwap(IndexChange);
+        }
+        function ListSwap(sender) {
+        
+            let elementsSide = document.getElementsByClassName("side");
+            let swapButtons = document.getElementsByClassName("buttonSwap");
+            for (let indexFor = 0; indexFor < swapButtons.length; indexFor++) {
+                swapButtons[indexFor].className = "buttonSwap";
+            }
+            swapButtons[sender].className+=" active";
+            let element = elementsSide[sender]
+        
+            for (let indexFor = 0; indexFor < elementsSide.length; indexFor++) {
+                elementsSide[indexFor].style.display = "none";
+            }
+            element.style.display = "grid";
+        }
+    </script>
+    <script>
+        HideMailWindow();
+        function ShowMailWindow() {
+            let element = document.getElementById("darken");
+            element.style.display = "block";
+        }
+        function HideMailWindow() {
+            let element = document.getElementById("darken");
+            element.style.display = "none";
+            element = document.getElementById("FormMail");
+        }
+    </script>
+        <script>
+        let butShow = document.getElementsByClassName("expand")[0];
+        butShow.addEventListener("click", ShowMenuDropdown);
+        function ShowMenuDropdown() {
+            let element = document.getElementsByClassName("dropdown")[0];
+            const animation = element.animate ([
+            {
+                right: "-250px",
+
+            },
+            {
+                right: "0px",
+            }
+            ],
+            {
+                duration: 1000,
+                easing: "ease",
+                iterations: 1
+            })
+            element.style.right = "0px";
+            
+            butShow.addEventListener("click", HideMenuDropdown);
+            butShow.removeEventListener("click", ShowMenuDropdown);
+        }
+        function HideMenuDropdown() {
+            let element = document.getElementsByClassName("dropdown")[0];
+            const animation = element.animate ([
+            {
+                right: "0px",
+
+            },
+            {
+                right: "-250px",
+            }
+            ],
+            {
+                duration: 1000,
+                easing: "ease",
+                iterations: 1
+            })
+            element.style.right = "-250px";
+            
+            butShow.addEventListener("click", ShowMenuDropdown);
+            butShow.removeEventListener("click", HideMenuDropdown);
+        }
+
+
+    </script>
+
+</body>
+</html>

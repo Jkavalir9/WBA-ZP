@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://api-ssps.cajthaml.eu/file/global/css/reset_ld9mrCCm.css"> 
+
+
+    <link rel="stylesheet" href="../Shared/base.css">
+    <link rel="stylesheet" href="../Shared/Mail.css">
+
+    <link rel="stylesheet" href="events.css">
+    
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+    <title>Události</title>
+    <script src="https://kit.fontawesome.com/82b9270136.js" crossorigin="anonymous"></script>
+
+    <style>
+        .block {
+        height: fit-content;
+        min-height: 100vh;
+        padding-bottom: 150px;
+        } 
+        </style>
+</head>
+
+
+
+<body>
+    <?php
+    if(isset($_POST['submit'])){
+        $MailSubject = $_POST['subject'];
+        $MailContent = $_POST['content'];
+        $host=$_SERVER['SERVER_NAME'];
+        $from="server@$host";
+        $MailContent = wordwrap($MailContent, 100);
+        mail("j.kavalir10@gmail.com", $MailSubject, $MailContent, "From: $from");
+    }
+    ?>
+    <div class="darken" id="darken">
+        <div class="mailwindow">
+            <button id="cancelMail" class="cancel" onclick="HideMailWindow()">X</button>
+            <form action="" method="post">
+                <input type="text"  class="TextSub" name="subject" placeholder="Předmět" id="">
+                <input type="text"  class="TextCon" name="content" placeholder="Obsah" id="">
+                <input type="submit" class="ButForm" name="submit" value="Odeslat">
+            </form>
+        </div>
+    </div>
+
+    <nav>
+        <a href="../MainPage/Domů.html"><p>Hlavní Stránka</p></a>
+        <a href="../sidePages/Udalosti.html"><p>Události</p></a>
+        <button class="expand"><i class="fa-solid fa-bars"></i></button>
+    </nav>
+    <div class="dropdown">
+        <a href="../MainPage/Domů.html"><p>Hlavní Stránka</p></a>
+        <a href="../sidePages/Udalosti.html"><p>Události</p></a>
+        <p></p>
+        <a href="../sidePages/O nás.html"><p>O Nás</p></a>
+        <a href="../sidePages/Dokumentace.html"><p>Dokumentace</p></a>
+        <a href="../sidePages/Galerie.html"><p>Galerie</p></a>
+        <a href="../sidePages/Revize.html"><p>Revize domu</p></a>
+    </div>
+    <div class="background">   
+        <div class="block">
+            <article>
+                <button name="FilterButton" class="active" onclick="AllFilter()"><i class="fa-solid fa-note-sticky"></i> Vše</button>
+                <button name="FilterButton" onclick="ActFilter()"><i class="fa-solid fa-bullhorn"></i> Aktuality</button>
+                <button name="FilterButton" onclick="FixFilter()"><i class="fa-solid fa-wrench"></i> Plánované opravy</button>   
+                <button name="FilterButton" onclick="PinFilter()"><i class="fa-solid fa-thumbtack"></i> Připnuté zprávy</button>  
+            </article>
+            <div class="content">
+                <div class="All Repair">
+                    <div class="dateContent"><p class="day">16</p><p class="month">Duben</p></div>
+                    <div class="textContent">
+                        <h1>Odstávka vody</h1>
+                        <hr>
+                        <p>od 14:00 do 16:00 proběhne odstávka vody z důvodu udržby</p>
+                    </div>
+                    <div class="AnType"><i class="fa-solid fa-wrench"></i></div>
+                </div>
+                <div class="All Pin">
+                    <div class="dateContent"><p class="day">16</p><p class="month">Duben</p></div>
+                    <div class="textContent">
+                        <h1>Odstávka vody</h1>
+                        <hr>
+                        <p>od 14:00 do 16:00 proběhne odstávka vody z důvodu udržby</p>
+                    </div>
+                    <div class="AnType"><i class="fa-solid fa-thumbtack"></i></div>
+                </div>
+                <div class="All Anouncement">
+                    <div class="dateContent"><p class="day">16</p><p class="month">Duben</p></div>
+                    <div class="textContent">
+                        <h1>Odstávka vody</h1>
+                        <hr>
+                        <p>od 14:00 do 16:00 proběhne odstávka vody z důvodu udržby</p>
+                    </div>
+                    <div class="AnType"><i class="fa-solid fa-bullhorn"></i></div>
+                </div>
+                <div class="All Anouncement">
+                    <div class="dateContent"><p class="day">16</p><p class="month">Duben</p></div>
+                    <div class="textContent">
+                        <h1>Odstávka vody</h1>
+                        <hr>
+                        <p>od 14:00 do 16:00 proběhne odstávka vody z důvodu udržby</p>
+                    </div>
+                    <div class="AnType"><i class="fa-solid fa-bullhorn"></i></div>
+                </div>
+                <div class="All Pin">
+                    <div class="dateContent"><p class="day">16</p><p class="month">Duben</p></div>
+                    <div class="textContent">
+                        <h1>Odstávka vody</h1>
+                        <hr>
+                        <p>od 14:00 do 16:00 proběhne odstávka vody z důvodu udržby</p>
+                    </div>
+                    <div class="AnType"><i class="fa-solid fa-thumbtack"></i></div>
+                </div>
+                <div class="All Repair">
+                    <div class="dateContent"><p class="day">16</p><p class="month">Duben</p></div>
+                    <div class="textContent">
+                        <h1>Odstávka vody</h1>
+                        <hr>
+                        <p>od 14:00 do 16:00 proběhne odstávka vody z důvodu udržby</p>
+                    </div>
+                    <div class="AnType"><i class="fa-solid fa-wrench"></i></div>
+                </div>
+            </div>
+
+            
+        </div>
+    </div>
+    <footer>
+        <button id="mail" onclick="ShowMailWindow()">Poslat E-mail</button>
+        <div class="info">
+            <p><b>Otevírací doba:</b> 1. středa v měsíci, 19:00 - 20:00</p>
+            <p>veškeré kontaktní udaje naleznete <a href="../sidePages/O nás.html">zde</a></p>
+        </div>
+        <div class="info">
+            <p><b>Tvorba stránek:</b> Jan Kavalír</p>
+            <p>s problémy se obraťte na adresu: j.kavalir10@gmail.com</p>
+        </div>
+    </footer>
+
+    <script>
+        const FilterButtons = document.getElementsByName("FilterButton");
+        const AllDivs = document.getElementsByClassName("All");
+        const PinDivs = document.getElementsByClassName("Pin");
+        const AnouncementDivs = document.getElementsByClassName("Anouncement");
+        const FixDivs = document.getElementsByClassName("Repair")
+        function AllFilter() {
+            for (let index = 0; index < FilterButtons.length; index++) {
+                FilterButtons[index].className = "";
+            }
+            FilterButtons[0].className = "active";
+            for (let index = 0; index < AllDivs.length; index++) {
+                AllDivs[index].style.display = "grid";
+            }
+
+        }
+        function ActFilter() {
+            for (let index = 0; index < FilterButtons.length; index++) {
+                FilterButtons[index].className = "";
+            }
+            FilterButtons[1].className = "active";
+            for (let index = 0; index < AllDivs.length; index++) {
+                AllDivs[index].style.display = "none";
+            }
+            for (let index = 0; index < AnouncementDivs.length; index++) {
+                AnouncementDivs[index].style.display = "grid";
+            }
+        }
+        function FixFilter() {
+            for (let index = 0; index < FilterButtons.length; index++) {
+                FilterButtons[index].className = "";
+            }
+            FilterButtons[2].className = "active";
+            for (let index = 0; index < AllDivs.length; index++) {
+                AllDivs[index].style.display = "none";
+            }
+            for (let index = 0; index < FixDivs.length; index++) {
+                FixDivs[index].style.display = "grid";
+            }
+        }
+        function PinFilter() {
+            for (let index = 0; index < FilterButtons.length; index++) {
+                FilterButtons[index].className = "";
+            }
+            FilterButtons[3].className = "active";
+            for (let index = 0; index < AllDivs.length; index++) {
+                AllDivs[index].style.display = "none";
+            }
+            for (let index = 0; index < PinDivs.length; index++) {
+                PinDivs[index].style.display = "grid";
+            }
+        }
+    </script>
+    <script>
+        HideMailWindow();
+        function ShowMailWindow() {
+            let element = document.getElementById("darken");
+            element.style.display = "block";
+        }
+        function HideMailWindow() {
+            let element = document.getElementById("darken");
+            element.style.display = "none";
+            element = document.getElementById("FormMail");
+        }
+    </script>
+    <script>
+        let butShow = document.getElementsByClassName("expand")[0];
+        butShow.addEventListener("click", ShowMenuDropdown);
+        function ShowMenuDropdown() {
+            let element = document.getElementsByClassName("dropdown")[0];
+            const animation = element.animate ([
+            {
+                right: "-250px",
+
+            },
+            {
+                right: "0px",
+            }
+            ],
+            {
+                duration: 1000,
+                easing: "ease",
+                iterations: 1
+            })
+            element.style.right = "0px";
+            
+            butShow.addEventListener("click", HideMenuDropdown);
+            butShow.removeEventListener("click", ShowMenuDropdown);
+        }
+        function HideMenuDropdown() {
+            let element = document.getElementsByClassName("dropdown")[0];
+            const animation = element.animate ([
+            {
+                right: "0px",
+
+            },
+            {
+                right: "-250px",
+            }
+            ],
+            {
+                duration: 1000,
+                easing: "ease",
+                iterations: 1
+            })
+            element.style.right = "-250px";
+            
+            butShow.addEventListener("click", ShowMenuDropdown);
+            butShow.removeEventListener("click", HideMenuDropdown);
+        }
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,133 @@
+
+.All{
+    width: 900px;
+    margin-top: 10px;
+    height: 60px;
+    border: 3px solid #33cc33;
+    border-radius: 5px;
+    display: grid;
+    grid-template-columns: 10% 80% 10%;
+
+}
+.content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    height: fit-content;
+}
+article{
+    width: 80%;
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    height: 120px;
+    margin-bottom: 40px;
+}
+article button {
+    width: 100%;
+    height: 100%;
+    border: 0px;
+    border-radius: 2px;
+    text-align: left;
+    transition: 0.5s;
+    font-size: 16px;
+}
+article button:hover{
+    background-color: #c0ccc0;
+    transition: 0.5s;
+}
+article .active:hover{
+    background-color: #33cc33;
+}
+article .active{
+    background-color: #33cc33;
+    color: white;
+    transition: 0.5s;
+}
+article button i{
+    font-size: 20px;
+}
+
+.content h1 {
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 10px;
+
+
+}
+.sideContent hr {
+    width: 80%;
+    color: gray;
+    border: gray 0.5px solid;
+}
+.textContent{
+    background-color: white;
+    font-size: 16px;
+    border: none;
+    border-left: #33cc33;
+    border-radius: 0px;
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 30% 10% 60%;
+    text-align: center;
+}
+.dateContent{
+    background-color: whitesmoke;
+    border: none;
+    border-right: #33cc33;
+    border-radius: 0px;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+.day {
+    font-size: 36px;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+}
+.month {
+    font-weight: 500;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    height: 100%;
+    width: 100%;
+}
+
+.AnType {
+    font-size: 36px;
+    text-align: center;
+    background-color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+hr{
+    width: 90%;
+    position: relative;
+    bottom: 5px;
+}
+
+@media (max-width: 1200px) {
+    .All {
+        width: 80%;
+        height: 80px;
+        grid-template-columns: 15% 70% 15%;
+    }
+}
+@media (max-width: 800px) {
+    .All {
+        width: 95%;
+        height: 120px;
+        grid-template-columns: 20% 60% 20%;
+    }
+}
